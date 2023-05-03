@@ -273,24 +273,4 @@
 
 <!-- ![Jokes Card](https://readme-jokes.vercel.app/api) -->
 
----
-
-[ContactMe]:https://user-images.githubusercontent.com/29084184/218641537-f40efdfc-fbdd-4ce8-b69c-4fed996437b4.png
-
-<div align="center">
-  <a href="/" alt="WX: /" title="WX: /" target="_blank"\>
-    <img src="https://raw.githubusercontent.com/ERIC-ZHAO-3366/eric-zhao-3366/d54f6d17c8986dd6c5a2829947f8e0130001e81a/svg/1.svg" width="156" height="78" alt="Click to see the source">
-  </a>
-  <a href="/">
-    <img src="https://raw.githubusercontent.com/ERIC-ZHAO-3366/eric-zhao-3366/d54f6d17c8986dd6c5a2829947f8e0130001e81a/svg/2.svg" width="156" height="78" alt="Click to see the source">
-  </a>
-  <a href="/">
-    <img src="https://raw.githubusercontent.com/ERIC-ZHAO-3366/eric-zhao-3366/d54f6d17c8986dd6c5a2829947f8e0130001e81a/svg/1.svg" width="156" height="78" alt="Click to see the source">
-  </a>
-  <a href="https://raw.githubusercontent.com/ERIC-ZHAO-3366/eric-zhao-3366/d54f6d17c8986dd6c5a2829947f8e0130001e81a/svg/2.svg">
-    <img src="https://raw.githubusercontent.com/ERIC-ZHAO-3366/eric-zhao-3366/d54f6d17c8986dd6c5a2829947f8e0130001e81a/svg/2.svg" width="156" height="78" alt="Click to see the source">
-    </a>
-    <div align="right">
-        <sup>Ads</sup> &emsp;&emsp;&emsp;
-    </div>
-</div>
+###End
