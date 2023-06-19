@@ -2,7 +2,7 @@
     <img align="right" src="https://komarev.com/ghpvc/?username=eric-zhao-3366&label=Visitors&color=red&style=flat&logo=github" alt="gtihub-visitors" />
 </a>
 
-## Hi, 👋  I'm EricZhao 此界面建设中，请勿点击任何链接！！！ VISION:20230609UPDATE</sup>
+## Hi, 👋  I'm EricZhao 此界面建设中，请勿点击任何链接！！！ VISION:20230619UPDATE</sup>
 
 <p align="center">
   <a href= "/" target="_blank" alt="WeChat" title="WeChat">
@@ -13,7 +13,7 @@
     <img src="https://img.icons8.com/material-two-tone/50/000000/zhihu.png" width="28px"/>
   </a>
   &emsp;
-  <a href="/" target="_blank" alt="Bilibili" title="Bilibili">
+  <a href="https://space.bilibili.com/485275168" target="_blank" alt="Bilibili" title="Bilibili">
     <img src="https://user-images.githubusercontent.com/29084184/166415345-91925d37-c66f-448f-8d75-c8355fe0b692.png" width="30px"/>
   </a>
   &emsp;
@@ -25,9 +25,6 @@
     <img src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" width="30px"/>
   </a>
   &emsp;
-  <a href="/e" target="_blank" alt="LinkedIn" title="LinkedIn">
-    <img src="https://img.icons8.com/ios-filled/256/000000/linkedin.svg" width="26px"/>
-  </a>
   &emsp;
   <br><br>
   <strong>Check out my work below!</strong>
