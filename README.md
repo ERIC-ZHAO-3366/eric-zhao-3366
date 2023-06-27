@@ -192,6 +192,36 @@
       </a>
       <br />
       <a href="/">/</a>
+    </td><td align="center">
+      <a href="/">
+        <img src="https://avatars.githubusercontent.com/u/51699601?v=4" width="42.4px;" alt="/"/>
+      </a>
+      <br />
+      <a href="/">/</a>
+    </td><td align="center">
+      <a href="/">
+        <img src="https://avatars.githubusercontent.com/u/51699601?v=4" width="42.4px;" alt="/"/>
+      </a>
+      <br />
+      <a href="/">/</a>
+    </td><td align="center">
+      <a href="/">
+        <img src="https://avatars.githubusercontent.com/u/51699601?v=4" width="42.4px;" alt="/"/>
+      </a>
+      <br />
+      <a href="/">/</a>
+    </td><td align="center">
+      <a href="/">
+        <img src="https://avatars.githubusercontent.com/u/51699601?v=4" width="42.4px;" alt="/"/>
+      </a>
+      <br />
+      <a href="/">/</a>
+    </td><td align="center">
+      <a href="/">
+        <img src="https://avatars.githubusercontent.com/u/51699601?v=4" width="42.4px;" alt="/"/>
+      </a>
+      <br />
+      <a href="/">/</a>
     </td>
   </tr>
 </table>
