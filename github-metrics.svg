@@ -219,13 +219,13 @@
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="265.03593247723717" height="8" fill="#f1e05a"/>
-                    <rect mask="url(#languages-bar)" x="265.03593247723717" y="0" width="58.85618594005083" height="8" fill="#e34c26"/>
-                    <rect mask="url(#languages-bar)" x="323.89211841728803" y="0" width="44.6958782839928" height="8" fill="#ff5a03"/>
-                    <rect mask="url(#languages-bar)" x="368.5879967012808" y="0" width="36.91798643485871" height="8" fill="#663399"/>
-                    <rect mask="url(#languages-bar)" x="405.50598313613955" y="0" width="32.52639816887423" height="8" fill="#41b883"/>
-                    <rect mask="url(#languages-bar)" x="438.03238130501376" y="0" width="18.587508625477557" height="8" fill="#3178c6"/>
-                    <rect mask="url(#languages-bar)" x="456.61988993049135" y="0" width="3.3801100695087265" height="8" fill="#c6538c"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="250.86974805159682" height="8" fill="#f1e05a"/>
+                    <rect mask="url(#languages-bar)" x="250.86974805159682" y="0" width="57.66973287994274" height="8" fill="#e34c26"/>
+                    <rect mask="url(#languages-bar)" x="308.5394809315395" y="0" width="46.515532805403744" height="8" fill="#3178c6"/>
+                    <rect mask="url(#languages-bar)" x="355.05501373694324" y="0" width="45.71484876169619" height="8" fill="#663399"/>
+                    <rect mask="url(#languages-bar)" x="400.76986249863944" y="0" width="31.87071441999756" height="8" fill="#41b883"/>
+                    <rect mask="url(#languages-bar)" x="432.64057691863707" y="0" width="24.047450997206436" height="8" fill="#ff5a03"/>
+                    <rect mask="url(#languages-bar)" x="456.6880279158435" y="0" width="3.3119720841565057" height="8" fill="#c6538c"/>
                 </svg>
                 <div class="field center horizontal-wrap fill-width">
                     <div class="field center no-wrap language">
@@ -242,9 +242,9 @@
                     </div>
                     <div class="field center no-wrap language">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill="#ff5a03" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                            <path fill="#3178c6" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                         </svg>
-                        Astro
+                        TypeScript
                     </div>
                     <div class="field center no-wrap language">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -260,9 +260,9 @@
                     </div>
                     <div class="field center no-wrap language">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill="#3178c6" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                            <path fill="#ff5a03" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                         </svg>
-                        TypeScript
+                        Astro
                     </div>
                     <div class="field center no-wrap language">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -307,7 +307,7 @@
                                     </svg>
                                     <div class="name">
                                         <span>Fei-Away/Codex-Dream-Skin</span>
-                                        <span>starred 16 days ago</span>
+                                        <span>starred 17 days ago</span>
                                     </div>
                                 </div>
                                 <div class="field description">Codex Dream Skin</div>
@@ -520,7 +520,7 @@
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated 3 Aug 2026, 02:03:42 (timezone Asia/Shanghai) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 3 Aug 2026, 04:13:20 (timezone Asia/Shanghai) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
