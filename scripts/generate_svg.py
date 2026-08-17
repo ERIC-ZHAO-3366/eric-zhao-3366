@@ -225,7 +225,7 @@ def generate():
     recent_posts = fetch_recent_posts(rss_url, max_posts=4) if rss_url else []
     langs_card_svg = download_text(
         f"https://github-stats-extended.vercel.app/api/top-langs/?username={USERNAME}"
-        f"&theme=transparent&hide_border=true&layout=compact&langs_count=6"
+        f"&theme=default&hide_border=true&layout=compact&langs_count=6"
     )
 
     now = datetime.now(CN_TZ)
