@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="120" viewBox="0 0 460 120">
+  <rect width="460" height="120" fill="#f5f0e8" rx="8"/>
+  <text x="230" y="60" text-anchor="middle" dominant-baseline="middle"
+        font-family="Segoe UI, sans-serif" font-size="16" fill="#8a7a6a">
+    🐍 贡献蛇生成中… ｜ Contribution snake is being generated…
+  </text>
+  <text x="230" y="85" text-anchor="middle" dominant-baseline="middle"
+        font-family="Segoe UI, sans-serif" font-size="12" fill="#b0a090">
+    首次触发 GitHub Action 后自动生成
+  </text>
+</svg>

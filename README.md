@@ -1,3 +1,5 @@
-<picture>
-  <img src="/github-metrics.svg" alt="Metrics">
-</picture>
+<div align="center">
+
+<img src="./assets/profile.svg" alt="Eric Zhao profile" width="900" />
+
+</div>
