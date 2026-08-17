@@ -1,6 +1,7 @@
 """
-每日获取和风/古风二次元图片
-优先从 Konachan 搜索 kimono/japanese_style 标签，失败则 fallback 到 waifu.pics
+每日获取二次元图片（SFW）
+使用 nekos.life 等对 GitHub Actions 云 IP 友好的稳定图源
+原 Konachan/yande.re 会封禁 Azure IP 段（返回 400），waifu.pics 服务已异常，均已弃用
 """
 import json
 import os
@@ -16,12 +17,13 @@ META_PATH = os.path.join(ASSETS_DIR, "waifu_meta.json")
 CONFIG_PATH = os.path.join(os.path.dirname(__file__), "..", "config.json")
 
 HEADERS = {
-    "User-Agent": "eric-zhao-3366-profile-bot/1.0 (https://github.com/eric-zhao-3366)"
+    "User-Agent": "eric-zhao-3366-profile-bot/1.0 (https://github.com/eric-zhao-3366)",
+    "Accept": "application/json",
 }
 
 
 def load_waifu_tags():
-    defaults = ["kimono", "yukata", "japanese_clothes", "traditional_clothes", "fan"]
+    defaults = ["waifu", "neko", "fox_girl", "gecg"]
     if os.path.exists(CONFIG_PATH):
         with open(CONFIG_PATH, "r", encoding="utf-8") as f:
             cfg = json.load(f)
@@ -34,65 +36,70 @@ def load_waifu_tags():
 WAIFU_TAGS = load_waifu_tags()
 
 
-def safe_request(url, timeout=20):
-    req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read()
+def safe_request(url, timeout=20, retries=3):
+    last_err = None
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(url, headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.read()
+        except Exception as e:
+            last_err = e
+            if attempt < retries - 1:
+                wait = 2 * (attempt + 1)
+                print(f"  请求失败({attempt + 1}/{retries}): {e}，{wait}s 后重试...")
+                time.sleep(wait)
+    raise last_err
 
 
-def fetch_from_konachan():
-    """从 Konachan 搜索和风/古风标签的图片（sfw）"""
-    tags = random.choice(WAIFU_TAGS)
-    url = (
-        f"https://konachan.com/post.json?tags={tags}%20rating:safe%20width:>=1000&limit=20"
-    )
-    data = json.loads(safe_request(url).decode("utf-8"))
-    if not data:
-        return None
-    item = random.choice(data)
-    img_url = item.get("file_url") or item.get("sample_url")
-    if not img_url:
-        return None
-    return {
-        "image": img_url,
-        "source": "konachan",
-        "tags": item.get("tags", ""),
-        "id": item.get("id"),
-        "page": f"https://konachan.com/post/show/{item.get('id')}",
-    }
-
-
-def fetch_from_yandere():
-    """从 yande.re 搜索和风标签（sfw）"""
-    tags = random.choice(WAIFU_TAGS[:3])
-    url = f"https://yande.re/post.json?tags={tags}%20rating:safe%20width:>=1000&limit=20"
-    data = json.loads(safe_request(url).decode("utf-8"))
-    if not data:
-        return None
-    item = random.choice(data)
-    img_url = item.get("file_url") or item.get("sample_url")
-    if not img_url:
-        return None
-    return {
-        "image": img_url,
-        "source": "yandere",
-        "tags": item.get("tags", ""),
-        "id": item.get("id"),
-        "page": f"https://yande.re/post/show/{item.get('id')}",
-    }
-
-
-def fetch_from_waifu_pics():
-    """fallback：waifu.pics 随机图"""
-    url = "https://waifu.pics/api/sfw/waifu"
+def fetch_from_nekos_life():
+    """nekos.life - 稳定的 SFW 二次元图片 API
+    端点：waifu, neko, fox_girl, gecg 等
+    返回 {"url": "https://cdn.nekos.life/..."}
+    """
+    endpoint = random.choice(WAIFU_TAGS)
+    url = f"https://nekos.life/api/v2/img/{endpoint}"
+    print(f"  端点: {endpoint}")
     data = json.loads(safe_request(url).decode("utf-8"))
     img_url = data.get("url")
     if not img_url:
         return None
     return {
         "image": img_url,
-        "source": "waifu.pics",
-        "tags": "",
+        "source": "nekos.life",
+        "tags": endpoint,
+        "id": None,
+        "page": img_url,
+    }
+
+
+def fetch_from_nekos_life_neko():
+    """nekos.life 备用：固定 neko 端点"""
+    url = "https://nekos.life/api/v2/img/neko"
+    data = json.loads(safe_request(url).decode("utf-8"))
+    img_url = data.get("url")
+    if not img_url:
+        return None
+    return {
+        "image": img_url,
+        "source": "nekos.life",
+        "tags": "neko",
+        "id": None,
+        "page": img_url,
+    }
+
+
+def fetch_from_nekos_life_waifu():
+    """nekos.life 备用：固定 waifu 端点"""
+    url = "https://nekos.life/api/v2/img/waifu"
+    data = json.loads(safe_request(url).decode("utf-8"))
+    img_url = data.get("url")
+    if not img_url:
+        return None
+    return {
+        "image": img_url,
+        "source": "nekos.life",
+        "tags": "waifu",
         "id": None,
         "page": img_url,
     }
@@ -107,7 +114,11 @@ def download_image(url, dest):
 
 def main():
     os.makedirs(ASSETS_DIR, exist_ok=True)
-    providers = [fetch_from_konachan, fetch_from_yandere, fetch_from_waifu_pics]
+    providers = [
+        fetch_from_nekos_life,
+        fetch_from_nekos_life_neko,
+        fetch_from_nekos_life_waifu,
+    ]
     last_err = None
     for provider in providers:
         try:
@@ -128,7 +139,15 @@ def main():
             last_err = e
             print(f"{provider.__name__} 失败: {e}", file=sys.stderr)
             continue
-    print(f"所有图源均失败: {last_err}", file=sys.stderr)
+
+    if os.path.exists(OUTPUT_PATH):
+        print(
+            f"所有图源均失败，保留现有图片: {OUTPUT_PATH}",
+            file=sys.stderr,
+        )
+        return 0
+
+    print(f"所有图源均失败且无现有图片: {last_err}", file=sys.stderr)
     return 1
 
 
